@@ -1,12 +1,13 @@
 "use client";
 
-import MovieList from "@/components/movies/MovieList";
+import Tab from "@/components/app/Tab";
+
 
 export default function MoviesPage() {
   return (
     <div>
    
-      <MovieList />
+      <Tab/>
     </div>
   );
 }
