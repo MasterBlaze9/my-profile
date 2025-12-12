@@ -17,11 +17,12 @@ export default function MovieCard({ movie }: MovieCardProps) {
       <div className="relative overflow-hidden rounded-xl shadow-md group-hover:shadow-xl">
         <Image
           src={imageUrl}
-          alt={movie.title}
-          width={300}
-          height={450}
+          alt="movie-card"
+          width={150}
+          height={200}
           className="h-auto w-full object-cover"
           placeholder="empty" 
+          loading="eager"
         />
 
    
