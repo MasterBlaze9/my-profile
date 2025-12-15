@@ -19,6 +19,7 @@ export type SteamRecentGame = {
 export type SteamUserInfo = {
   profile: SteamUserProfile;
   recentGames: SteamRecentGame[];
+  ownedGames: SteamOwnedGame[];
 };
 
 export const steamServices = {
@@ -54,4 +55,12 @@ export const steamServices = {
       clearTimeout(timeout);
     }
   },
+};
+
+// Additional type for owned games from Steam library
+export type SteamOwnedGame = {
+  appId: number;
+  name: string;
+  playtimeForever: number; // minutes
+  icon: string; // icon hash used to compose image URL
 };
