@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "image.tmdb.org", 
+        hostname: "image.tmdb.org",
         port: "",
         pathname: "/**",
       },
@@ -23,7 +23,6 @@ const nextConfig: NextConfig = {
         pathname: "/steamcommunity/public/images/apps/**",
       },
     ],
-  
   },
 };
 
