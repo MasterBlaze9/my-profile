@@ -1,0 +1,13 @@
+/* Leaflet base styles */
+@import url("leaflet/dist/leaflet.css");
+
+/* Map component scoped styles */
+.map-wrapper {
+  height: 24rem; /* h-96 equivalent */
+  width: 100%;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+}

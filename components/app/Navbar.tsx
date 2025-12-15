@@ -12,6 +12,7 @@ export default function Navbar() {
     { name: "Entertainment", href: "/entertainment" },
     { name: "Music", href: "/music" },
     { name: "Books", href: "/books" },
+    { name: "Places", href:"/places"}
   ];
 
   return (
