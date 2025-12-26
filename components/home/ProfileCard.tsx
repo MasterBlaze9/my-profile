@@ -3,7 +3,7 @@ import profileImage from "@/public/images/profile-image.png";
 
 export default function ProfileCard() {
  return (
-   <div className="flex flex-col items-center text-center">
+   <div className="flex flex-col items-center">
     
      <div className="relative mb-6">
        <Image

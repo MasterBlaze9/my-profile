@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
+  basePath:"/my-profile",
   reactStrictMode: true,
   images: {
+    unoptimized:true,
     remotePatterns: [
       {
         protocol: "https",
