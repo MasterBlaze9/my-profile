@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath:"/my-profile",
+  basePath: "/my-profile",
+  assetPrefix: "/my-profile",
   reactStrictMode: true,
   images: {
     unoptimized:true,
