@@ -9,7 +9,8 @@ export default function Navbar() {
 	const links = [
 		{ name: "Home", to: "/" },
 		{ name: "Games", to: "/games" },
-		{ name: "Entertainment", to: "/entertainment" }
+		{ name: "Entertainment", to: "/entertainment" },
+		{ name: "GitHub", to: "/github" }
 	];
 
 	return (

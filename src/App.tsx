@@ -6,10 +6,12 @@ import SkillList from './components/home/SkillList';
 import SocialCard from './components/home/SocialCard';
 import Games from './pages/Games';
 import Entertainment from './pages/Entertainment';
-import NotFound from './pages/NotFound';
 
-const githubIcon = "/images/github-icon.svg";
-const linkedinIcon = '/images/linkedin-icon.svg';
+import NotFound from './pages/NotFound';
+import Github from './pages/Github';
+
+const githubIcon = "/my-profile/images/github-icon.svg";
+const linkedinIcon = '/my-profile/images/linkedin-icon.svg';
 
 function Home() {
   return (
@@ -46,6 +48,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />
         <Route path="/entertainment" element={<Entertainment />} />
+        <Route path="/github" element={<Github />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

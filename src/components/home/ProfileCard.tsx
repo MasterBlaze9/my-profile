@@ -1,6 +1,6 @@
 import React from "react";
 
-const profileImage = "/images/profile-image.png";
+const profileImage = "/my-profile/images/profile-image.png";
 
 const ProfileCard: React.FC = () => {
 	return (
