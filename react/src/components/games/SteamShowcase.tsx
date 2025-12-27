@@ -56,7 +56,7 @@ export const SteamShowcase: React.FC = () => {
 								<div className="flex-1">
 									<p className="font-medium truncate w-48">{game.name}</p>
 									<p className="text-xs text-gray-400">
-										{(game.playtime2Weeks / 60).toFixed(1)}h nas últimas 2 semanas
+										{((game.playtime2Weeks || 0) / 60).toFixed(1)}h in the last 2 weeks
 									</p>
 								</div>
 							</div>

@@ -62,7 +62,7 @@ export const steamServices = {
         recentGames: (recentData.response.games || []).map((g: any) => ({
           appId: g.appid,
           name: g.name,
-          playtime2Weeks: g.playtime_2weeks,
+          playtime2Weeks: g.playtime_2weeks || 0,
           playtimeForever: g.playtime_forever,
           imgIconUrl: g.img_icon_url,
         })),
