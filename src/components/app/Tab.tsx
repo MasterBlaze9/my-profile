@@ -37,7 +37,7 @@ export default function Tab() {
 	}
 
 	return (
-		<div className="px-4 py-8">
+		<div className="mx-auto max-w-6xl px-6 py-12 space-y-10 text-gray-900">
 			<div className="flex flex-wrap">
 				{lists.map((list, index) => (
 					<button

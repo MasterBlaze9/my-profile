@@ -100,12 +100,12 @@ export const MovieListComponent: React.FC<MovieListComponentProps> = ({ listId }
 						/>
 					</div>
 
-					{/* Nota/Rating (Badge) */}
-					<div className="absolute top-2 right-2 bg-black/80 backdrop-blur-md px-2 py-1 rounded text-xs font-bold text-yellow-400 border border-yellow-400/50">
+			
+					<div className="absolute top-2 right-2 bg-black/80 backdrop-blur-md px-2 py-1 rounded text-xs font-bold border">
 						★ {item.vote_average.toFixed(1)}
 					</div>
 
-					{/* Overlay com Informações ao Hover */}
+				
 					<div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
 						<h3 className="text-white text-sm font-bold leading-tight line-clamp-2">
 							{item.title || item.name}

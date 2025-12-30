@@ -31,7 +31,7 @@ export default function Games() {
 		fetchData();
 	}, []);
 
-	// Filter Logic
+
 	const filteredGames = useMemo(() => {
 		if (!data) return [];
 
@@ -53,9 +53,11 @@ export default function Games() {
 	);
 
 	return (
-		<div className="mx-auto max-w-6xl px-6 py-12 space-y-10 bg-white text-gray-900">
+		<div className='flex min-h-screen items-center justify-center bg-brand-light font-sans p-4'>
 
-			{/* 1. Error Message (Fixed TS6133) */}
+		<div className="mx-auto max-w-6xl px-6 py-12 space-y-10 text-gray-900">
+
+	
 			{error && (
 				<div className="p-4 text-sm text-red-700 bg-red-50 border border-red-100 rounded-xl flex justify-between items-center">
 					<span><strong>Error:</strong> {error}</span>
@@ -63,7 +65,7 @@ export default function Games() {
 				</div>
 			)}
 
-			{/* 2. Header Section */}
+	
 			<header className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-gray-100 pb-8">
 				<div className="flex items-center space-x-4">
 					<img
@@ -92,8 +94,8 @@ export default function Games() {
 				</div>
 			</header>
 
-			{/* 3. Controls: Search & Toggle */}
-			<section className="flex flex-col md:flex-row gap-3 items-center justify-between bg-gray-50/50 p-3 rounded-2xl border border-gray-100">
+
+			<section className="flex flex-col md:flex-row gap-3 items-center justify-between bg-white p-3  border border-gray-100">
 				<input
 					type="text"
 					placeholder="Search for a title..."
@@ -105,33 +107,31 @@ export default function Games() {
 				<button
 					onClick={() => setFilterFavorites(!filterFavorites)}
 					className={`w-full md:w-auto px-5 py-2 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 ${filterFavorites
-							? 'bg-blue-600 text-white shadow-md'
-							: 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-100 shadow-sm'
-						}`}
+						? 'bg-blue-600 text-white shadow-md'
+						: 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-100 shadow-sm'
+					}`}
 				>
 					{filterFavorites ? '★ Showing Favorites' : '☆ Show Favorites'}
 				</button>
 			</section>
 
-			{/* 4. Recently Played (Visible only when not searching/filtering) */}
 			{!filterFavorites && searchQuery === '' && (data?.recentGames.length ?? 0) > 0 && (
 				<section className="animate-in fade-in slide-in-from-bottom-2 duration-500">
 					<h2 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6 flex items-center gap-2">
 						<span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
 						Recently Active
 					</h2>
-					<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+					<div className="bg-white p-4 grid grid-cols-2 md:grid-cols-4 gap-4">
 						{data?.recentGames.map(game => (
 							<div key={game.appId} className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
 								<img
 									src={`https://media.steampowered.com/steamcommunity/public/images/apps/${game.appId}/${game.imgIconUrl}.jpg`}
 									className="w-8 h-8 rounded shadow-sm"
 									alt={game.name}
-								/>
+									/>
 								<div className="overflow-hidden">
 									<p className="text-[11px] font-bold text-gray-800 truncate">{game.name}</p>
 									<p className="text-xs text-gray-400">
-										{/* The (game.playtime2Weeks || 0) ensures we always have a number to divide */}
 										{((game.playtime2Weeks || 0) / 60).toFixed(1)}h in the last 2 weeks
 									</p>
 								</div>
@@ -141,8 +141,7 @@ export default function Games() {
 				</section>
 			)}
 
-			{/* 5. Main Grid (Compact Version) */}
-			<section>
+			<section className='bg-white p-4'>
 				<div className="flex items-center justify-between mb-8 border-b border-gray-50 pb-4">
 					<h2 className="text-[10px] font-black uppercase tracking-widest text-gray-400">
 						{filterFavorites ? 'Curated Collection' : 'Game Library'} ({filteredGames.length})
@@ -162,6 +161,7 @@ export default function Games() {
 				)}
 			</section>
 		</div>
+				</div>
 	);
 }
 

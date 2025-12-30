@@ -88,9 +88,8 @@ export const MovieListComponent: React.FC<MovieListComponentProps> = ({ listId }
 								loading="lazy"
 							/>
 
-							{/* Overlay com Informações */}
 							<div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/30 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-								<span className="mb-1 w-fit rounded bg-yellow-500 px-1.5 py-0.5 text-[10px] font-bold text-black">
+								<span className="mb-1 w-fit rounded px-1.5 py-0.5 text-[10px] font-bold text-black">
 									★ {item.vote_average.toFixed(1)}
 								</span>
 								<h3 className="text-sm font-bold text-white line-clamp-2">

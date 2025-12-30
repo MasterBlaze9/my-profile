@@ -4,9 +4,11 @@ import GithubRepos from '../components/github/GithubRepos';
 
 const Github: React.FC = () => {
 	return (
-		<div style={{ maxWidth: 800, margin: '0 auto', padding: '2rem' }}>
-			
+		<div className='flex min-h-screen items-center justify-center bg-brand-light font-sans p-4'>
+			<div className='w-full max-w-3xl'>
+
 			<GithubRepos username="MasterBlaze9" perPage={8} />
+			</div>
 		</div>
 	);
 };

@@ -1,20 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Define aqui as cores que usaste no App.tsx */
-  --color-brand: #2563eb;
-  /* Ajusta para o teu azul/cor principal */
-  --color-brand-light: #f1f5f9;
-  /* Ajusta para o teu cinza/fundo */
 
-  /* Se usares fontes específicas, podes definir aqui também */
+  --color-primary: #bf1616;
+  --color-secondary: #f1f5f9;
   --font-sans: "Inter", ui-sans-serif, system-ui;
 }
 
-/* Garante que o body ocupa a altura toda */
-html,
-body,
-#root {
-  height: 100%;
-  margin: 0;
+a {
+  background-color: var(--color-secondary)
+}
+
+a:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.border-brand{
+  border-color: var(--color-primary);
+}
+
+.navbar{
+  
 }
