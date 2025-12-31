@@ -58,7 +58,7 @@ export const MovieListComponent: React.FC<MovieListComponentProps> = ({ listId }
 		return (
 			<div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
 				{[...Array(12)].map((_, i) => (
-					<div key={i} className="animate-pulse rounded-lg bg-gray-200 dark:bg-gray-700 aspect-[2/3]" />
+					<div key={i} className="animate-pulse rounded-lg bg-gray-200 aspect-[2/3]" />
 				))}
 			</div>
 		);
@@ -75,7 +75,7 @@ export const MovieListComponent: React.FC<MovieListComponentProps> = ({ listId }
 					{items.map((item) => (
 						<div
 							key={item.id}
-							className="group relative overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-md transition-transform duration-300 hover:scale-105"
+							className="group relative overflow-hidden rounded-lg bg-gray-100 shadow-md transition-transform duration-300 hover:scale-105"
 						>
 							{/* Poster */}
 							<img

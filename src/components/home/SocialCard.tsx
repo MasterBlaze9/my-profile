@@ -6,6 +6,7 @@ interface SocialCardProps {
 	icon: string;
 }
 
+
 const SocialCard: React.FC<SocialCardProps> = ({ href, label, icon }) => {
 	return (
 		<a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">

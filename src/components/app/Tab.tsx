@@ -45,7 +45,7 @@ export default function Tab() {
 						onClick={() => setActiveIndex(index)}
 						className={`flex flex-1 items-center text-center justify-center border px-4 py-2 text-sm ${activeIndex === index
 							? "border-blue-600 bg-blue-600 text-white"
-							: "border-gray-300 bg-white text-gray-800 dark:bg-gray-800 dark:text-white"
+							: "border-gray-300 bg-white text-gray-800"
 							}`}
 						title={list.description}
 					>

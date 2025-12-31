@@ -1,10 +1,19 @@
 "use client";
 
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+const profileImage = "/my-profile/images/profile-image.png";
+const githubUrl = "https://github.com/MasterBlaze9";
+const linkedinUrl = "https://www.linkedin.com/in/rui-sim%C3%B5es-0001441b7/";
+const githubIcon = "/my-profile/images/github-icon.svg";
+const linkedinIcon = "/my-profile/images/linkedin-icon.svg";
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
+	// Removed dark mode state
+	const location = useLocation();
 
 	const links = [
 		{ name: "Home", to: "/" },
@@ -13,79 +22,85 @@ export default function Navbar() {
 		{ name: "GitHub", to: "/github" }
 	];
 
+	// Removed dark mode toggle logic
+
 	return (
-		<nav className="bg-white w-full z-50">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center justify-center">
-				<div className="flex h-16 w-full">
-					<div className="hidden md:flex space-x-8 items-center w-full">
-						{links.map((link) => (
-							<Link
-								key={link.name}
-								to={link.to}
-								className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium flex-1 items-center justify-center text-center"
-							>
-								{link.name}
-							</Link>
-						))}
+		<nav className="bg-white w-full z-50 shadow-sm border-b">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+				{/* Left: Empty for spacing (no logo) */}
+				<div className="w-10 md:w-24" />
+
+				{/* Center: Links */}
+				<div className="hidden md:flex space-x-2 items-center flex-1 justify-center">
+					{links.map((link) => (
+						<Link
+							key={link.name}
+							to={link.to}
+							className={`px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-center flex-1 items-center justify-center
+								${location.pathname === link.to ? 'bg-blue-600 text-white shadow-md' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'}`}
+						>
+							{link.name}
+						</Link>
+					))}
+				</div>
+
+				{/* Right: Theme switcher & user menu */}
+				<div className="flex items-center gap-2">
+	// Removed theme switcher button
+
+					{/* User menu: GitHub/LinkedIn */}
+					<div className="hidden md:flex items-center gap-2 ml-2">
+						<a href={githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-100" title="GitHub">
+							<img src={githubIcon} alt="GitHub" className="w-6 h-6" />
+						</a>
+						<a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-100" title="LinkedIn">
+							<img src={linkedinIcon} alt="LinkedIn" className="w-6 h-6" />
+						</a>
 					</div>
 
+					{/* Mobile menu button */}
 					<div className="flex items-center md:hidden">
 						<button
 							onClick={() => setIsOpen(!isOpen)}
 							type="button"
 							className="text-gray-700 hover:text-blue-600 focus:outline-none p-2"
 							aria-controls="mobile-menu"
-							aria-expanded="false"
+							aria-expanded={isOpen}
 						>
-							<span className="sr-only">Abrir menu principal</span>
+							<span className="sr-only">Open main menu</span>
 							{!isOpen ? (
-								<svg
-									className="h-6 w-6"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M4 6h16M4 12h16M4 18h16"
-									/>
-								</svg>
+								<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
 							) : (
-								// Ícone de Fechar (X)
-								<svg
-									className="h-6 w-6"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M6 18L18 6M6 6l12 12"
-									/>
-								</svg>
+								<svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
 							)}
 						</button>
 					</div>
 				</div>
 			</div>
 
+			{/* Mobile menu */}
 			{isOpen && (
-				<div className="md:hidden" id="mobile-menu">
-					<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t">
+				<div className="md:hidden absolute top-16 left-0 w-full bg-white border-t z-50 shadow-lg animate-in fade-in slide-in-from-top-2 duration-300">
+					<div className="flex flex-col gap-2 px-4 py-4">
 						{links.map((link) => (
 							<Link
 								key={link.name}
 								to={link.to}
 								onClick={() => setIsOpen(false)}
-								className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+								className={`px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-center
+								${location.pathname === link.to ? 'bg-blue-600 text-white shadow-md' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'}`}
 							>
 								{link.name}
 							</Link>
 						))}
+						<div className="flex gap-2 mt-2 justify-center">
+							<a href={githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-100" title="GitHub">
+								<img src={githubIcon} alt="GitHub" className="w-6 h-6" />
+							</a>
+							<a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-100" title="LinkedIn">
+								<img src={linkedinIcon} alt="LinkedIn" className="w-6 h-6" />
+							</a>
+						</div>
 					</div>
 				</div>
 			)}
