@@ -1,10 +1,6 @@
-"use client";
-
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const profileImage = "/my-profile/images/profile-image.png";
 const githubUrl = "https://github.com/MasterBlaze9";
 const linkedinUrl = "https://www.linkedin.com/in/rui-sim%C3%B5es-0001441b7/";
 const githubIcon = "/my-profile/images/github-icon.svg";
@@ -12,7 +8,6 @@ const linkedinIcon = "/my-profile/images/linkedin-icon.svg";
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
-	// Removed dark mode state
 	const location = useLocation();
 
 	const links = [
@@ -21,8 +16,6 @@ export default function Navbar() {
 		{ name: "Entertainment", to: "/entertainment" },
 		{ name: "GitHub", to: "/github" }
 	];
-
-	// Removed dark mode toggle logic
 
 	return (
 		<nav className="bg-white w-full z-50 shadow-sm border-b">
@@ -44,10 +37,8 @@ export default function Navbar() {
 					))}
 				</div>
 
-				{/* Right: Theme switcher & user menu */}
+				{/* Right: User menu */}
 				<div className="flex items-center gap-2">
-	// Removed theme switcher button
-
 					{/* User menu: GitHub/LinkedIn */}
 					<div className="hidden md:flex items-center gap-2 ml-2">
 						<a href={githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-100" title="GitHub">

@@ -2,7 +2,15 @@
 const DEFAULT_TIMEOUT_MS = 10_000;
 const API_KEY = import.meta.env.VITE_PUBLIC_STEAM_API_KEY;
 const STEAM_ID = import.meta.env.VITE_PUBLIC_STEAM_ACCOUNT_ID;
-const BASE_URL = '/api'; 
+const BASE_URL = '/api';
+
+type SteamApiGame = {
+  appid: number;
+  name: string;
+  playtime_forever: number;
+  playtime_2weeks?: number;
+  img_icon_url: string;
+};
 
 export type SteamUserProfile = {
   personaName?: string;
@@ -59,14 +67,14 @@ export const steamServices = {
           avatar: player.avatarfull,
           steamId: player.steamid,
         },
-        recentGames: (recentData.response.games || []).map((g: any) => ({
+        recentGames: (recentData.response.games || []).map((g: SteamApiGame) => ({
           appId: g.appid,
           name: g.name,
           playtime2Weeks: g.playtime_2weeks || 0,
           playtimeForever: g.playtime_forever,
           imgIconUrl: g.img_icon_url,
         })),
-        ownedGames: (ownedData.response.games || []).map((g: any) => ({
+        ownedGames: (ownedData.response.games || []).map((g: SteamApiGame) => ({
           appId: g.appid,
           name: g.name,
           playtimeForever: g.playtime_forever,

@@ -12,7 +12,7 @@ export const skills: Skill[] = [
     level: 4,
     icon: "/my-profile/images/python-icon.svg",
   },
-  { id: 2, name: "C", level: 3 },
+ 
   { id: 3, name: "Java", level: 4, icon: "/my-profile/images/java-icon.svg" },
   {
     id: 4,
@@ -41,12 +41,7 @@ export const skills: Skill[] = [
     level: 4,
     icon: "/my-profile/images/react-native-icon.svg",
   },
-  {
-    id: 11,
-    name: "Android",
-    level: 3,
-    icon: "/my-profile/images/android-icon.svg",
-  },
+
   {
     id: 12,
     name: "Microsoft SQL Server",
@@ -65,12 +60,7 @@ export const skills: Skill[] = [
     level: 3,
     icon: "/my-profile/images/mongodb-icon.svg",
   },
-  {
-    id: 15,
-    name: "Postman",
-    level: 4,
-    icon: "/my-profile/images/postman-icon.svg",
-  },
+
   {
     id: 16,
     name: "Express.js",
@@ -79,33 +69,11 @@ export const skills: Skill[] = [
   },
   {
     id: 17,
-    name: "OutSystems Traditional",
+    name: "OutSystems",
     level: 5,
     icon: "/my-profile/images/outsystems-icon.svg",
   },
-  {
-    id: 18,
-    name: "OutSystems Reactive",
-    level: 5,
-    icon: "/my-profile/images/outsystems-icon.svg",
-  },
-  {
-    id: 19,
-    name: "OutSystems Mobile",
-    level: 5,
-    icon: "/my-profile/images/outsystems-icon.svg",
-  },
-  { id: 20, name: "Jira", level: 4, icon: "/my-profile/images/jira-icon.svg" },
-  {
-    id: 21,
-    name: "Confluence",
-    level: 4,
-    icon: "/my-profile/images/confluence-icon.svg",
-  },
-  {
-    id: 22,
-    name: "Arduino",
-    level: 3,
-    icon: "/my-profile/images/arduino-icon.svg",
-  },
+ 
+ 
+ 
 ];

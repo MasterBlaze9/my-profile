@@ -1,8 +1,10 @@
 {
-  "name": "react",
+  "name": "rui-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Personal portfolio website showcasing projects, skills, and interests",
+  "author": "Rui Simões",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",

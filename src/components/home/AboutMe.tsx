@@ -1,6 +1,6 @@
 import React from "react";
 import { aboutMe } from "../../data/profile";
-import profilePic from "../../../public/images/profile-image.png"
+import profilePic from "../../../public/images/profile-image.png";
 import Contact from "./Contact";
 
 const AboutMe: React.FC = () => (

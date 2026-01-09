@@ -9,15 +9,11 @@ interface GithubReposProps {
 }
 
 const GithubRepos: React.FC<GithubReposProps> = ({ username, perPage = 6 }) => {
-
 	useEffect(() => {
-		let isMounted = true;
-		fetchGithubRepos(username, perPage)
-		return () => { isMounted = false; };
+		fetchGithubRepos(username, perPage);
 	}, [username, perPage]);
 
 	return (
-		
 		<section>
 			<header className="mb-10">
 				<h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">Featured Projects</h2>

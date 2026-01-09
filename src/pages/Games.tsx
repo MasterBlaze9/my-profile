@@ -22,7 +22,7 @@ export default function Games() {
 				} else {
 					setError('Steam profile is private or not found.');
 				}
-			} catch (err) {
+			} catch {
 				setError('Failed to connect to Steam API.');
 			} finally {
 				setLoading(false);
@@ -30,7 +30,6 @@ export default function Games() {
 		}
 		fetchData();
 	}, []);
-
 
 	const filteredGames = useMemo(() => {
 		if (!data) return [];
@@ -53,17 +52,14 @@ export default function Games() {
 	);
 
 	return (
-		<div className='flex min-h-screen items-center justify-center bg-white text-gray-900 font-sans p-4'>
+		<div className="flex min-h-screen items-center justify-center bg-white text-gray-900 font-sans p-4">
 			<div className="mx-auto max-w-6xl px-6 py-12 space-y-10">
-
-
 				{error && (
 					<div className="p-4 text-sm text-red-700 bg-red-50 border border-red-100 rounded-xl flex justify-between items-center">
 						<span><strong>Error:</strong> {error}</span>
 						<button onClick={() => window.location.reload()} className="underline font-bold text-xs uppercase">Retry</button>
 					</div>
 				)}
-
 
 				<header className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-gray-100 pb-8">
 					<div className="flex items-center space-x-4">
@@ -93,8 +89,7 @@ export default function Games() {
 					</div>
 				</header>
 
-
-				<section className="flex flex-col md:flex-row gap-3 items-center justify-between bg-white p-3  border border-gray-100">
+				<section className="flex flex-col md:flex-row gap-3 items-center justify-between bg-white p-3 border border-gray-100">
 					<input
 						type="text"
 						placeholder="Search for a title..."
@@ -140,7 +135,7 @@ export default function Games() {
 					</section>
 				)}
 
-				<section className='bg-white p-4'>
+				<section className="bg-white p-4">
 					<div className="flex items-center justify-between mb-8 border-b border-gray-50 pb-4">
 						<h2 className="text-[10px] font-black uppercase tracking-widest text-gray-400">
 							{filterFavorites ? 'Curated Collection' : 'Game Library'} ({filteredGames.length})
