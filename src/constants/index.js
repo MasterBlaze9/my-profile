@@ -106,13 +106,13 @@ export const projects = [
     description:
       "A full-stack manufacturing platform built with Django and a hybrid database architecture (PostgreSQL & MongoDB). It manages complex supply chain workflows, including component ordering, real-time warehouse stock tracking, and production line management, ensuring seamless integration between raw materials and finished electronic goods.",
     tags: [
-      { name: "python", color: "blue" },
-      { name: "django", color: "green" },
-      { name: "mongodb", color: "pink" },
-      { name: "postgresql", color: "blue" },
-      { name: "html", color: "green" },
-      { name: "css", color: "pink" },
-      { name: "javascript", color: "blue" },
+      { name: "python", color: "blue-text-gradient" },
+      { name: "django", color: "green-text-gradient" },
+      { name: "mongodb", color: "pink-text-gradient" },
+      { name: "postgresql", color: "blue-text-gradient" },
+      { name: "html", color: "orange-text-gradient" },
+      { name: "css", color: "pink-text-gradient" },
+      { name: "javascript", color: "blue-text-gradient" },
     ],
     image: techHaven,
     source_code_link: "https://github.com/MasterBlaze9/Tech-Haven",
@@ -122,12 +122,12 @@ export const projects = [
     description:
       "LocalCompass is a web application designed to connect local communities by enabling users to share events, posts, and reports. The platform aims to foster engagement, communication, and collaboration within neighborhoods or interest groups.",
     tags: [
-      { name: "java", color: "blue" },
-      { name: "spring boot", color: "green" },
-      { name: "postgresql", color: "pink" },
-      { name: "html", color: "blue" },
-      { name: "css", color: "green" },
-      { name: "javascript", color: "pink" },
+      { name: "java", color: "orange-text-gradient" },
+      { name: "spring boot", color: "green-text-gradient" },
+      { name: "postgresql", color: "blue-text-gradient" },
+      { name: "html", color: "orange-text-gradient" },
+      { name: "css", color: "blue-text-gradient" },
+      { name: "javascript", color: "pink-text-gradient" },
     ],
     image: localCompass, // Add image import if available
     source_code_link: "https://github.com/MasterBlaze9/localCompass",
@@ -137,9 +137,9 @@ export const projects = [
     description:
       "A battle game between two wizards developed in Java, where players control characters who cast spells, collect power-ups, and compete to defeat their opponent.",
     tags: [
-      { name: "java", color: "blue" },
-      { name: "simplegraphics", color: "green" },
-      { name: "apache ant", color: "pink" },
+      { name: "java", color: "orange-text-gradient" },
+      { name: "simplegraphics", color: "green-text-gradient" },
+      { name: "apache ant", color: "pink-text-gradient" },
     ],
     image: wizardBattle,
     source_code_link: "https://github.com/MasterBlaze9/wizzard-battle",
