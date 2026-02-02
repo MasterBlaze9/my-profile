@@ -23,6 +23,7 @@ import outsystems from "./tech/outsystems.svg"
 export const wizardBattle = "/my-profile/projects/wizard-battle.png";
 export const techHaven = "/my-profile/projects/tech-haven.png";
 export const localCompass = "/my-profile/projects/local-compass.png";
+export const jobTracker = "/my-profile/projects/job-tracker.png"
 
 // Import common assets
 

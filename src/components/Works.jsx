@@ -8,7 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
+const ProjectCard = ({ name, description, tags, image, source_code_link, demoLink }) => {
   return (
     <motion.div variants={fadeIn("up", "spring")} className="sm:w-[360px] w-full">
       <Tilt
@@ -44,6 +44,16 @@ const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
               #{tag.name}
             </p>
           ))}
+        </div>
+        <div className="flex flex-wrap">
+          {demoLink && (
+            <button
+              onClick={() => window.open(demoLink, "_blank")}
+              className="w-full px-4 py-2 mt-4 text-white transition bg-blue-600 rounded-lg hover:bg-blue-700" 
+            >
+              Demo
+            </button>
+          )}
         </div>
       </Tilt>
     </motion.div>

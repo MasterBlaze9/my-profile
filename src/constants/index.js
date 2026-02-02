@@ -15,6 +15,7 @@ import {
   django,
   outsystems,
   work,
+  jobTracker,
 } from "../assets";
 
 import { wizardBattle, techHaven, localCompass } from "../assets/index.js";
@@ -101,6 +102,24 @@ export const experiences = [
 
 
 export const projects = [
+
+  {
+    name: "Job Tracker",
+    description:
+      "A lightweight Kanban-style job application tracker built with Next.js and MongoDB. It provides boards, columns, drag-and-drop job application cards, and user authentication.",
+    tags: [
+      { name: "NextJs", color: "orange-text-gradient" },
+      { name: "MongoDB", color: "pink-text-gradient" },
+      { name: "Better Auth", color: "green-text-gradient" },
+      { name: "Mongoose", color: "pink-text-gradient" },
+      { name: "TypeScript", color: "blue-text-gradient" },
+      { name: "Tailwind", color: "pink-text-gradient" },
+
+    ],
+    image: jobTracker,
+    source_code_link: "https://github.com/MasterBlaze9/job-application-tracker",
+    demoLink: "https://job-application-tracker-rho-one.vercel.app/"
+  },
   {
     name: "Tech Haven",
     description:
@@ -117,6 +136,7 @@ export const projects = [
     image: techHaven,
     source_code_link: "https://github.com/MasterBlaze9/Tech-Haven",
   },
+ 
   {
     name: "Local Compass",
     description:
@@ -144,4 +164,7 @@ export const projects = [
     image: wizardBattle,
     source_code_link: "https://github.com/MasterBlaze9/wizzard-battle",
   },
+  
+
+  
 ];
