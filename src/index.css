@@ -1,63 +1,177 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 1. Importação de Tipografia (ex: Google Fonts) */
+/* Inter (Base/Gaming), Playfair (Books), Banger (Anime), Roboto Slab (TCG) */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@400;700&display=swap');
+
+/* =========================================
+   2. O ESTADO NEUTRO (Landing Screen)
+========================================= */
+:root {
+  /* Cores Base */
+  --bg-primary: #121214;
+  --bg-secondary: #202024;
+  --text-primary: #f8f8f2;
+  --text-secondary: #a8a8b3;
+  --accent: #0070f3;
+
+  /* Tipografia */
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+
+  /* Estrutura & Efeitos */
+  --radius: 8px;
+  --bg-pattern: none;
+}
+
+/* =========================================
+   3. OS MUNDOS (Overrides)
+========================================= */
+
+/* TCG: Tapete de jogo, cores mais analógicas e cartas */
+[data-world="tcg"] {
+  --bg-primary: #1c2826;
+  /* Verde escuro de playmat */
+  --bg-secondary: #2d403d;
+  --text-primary: #e6f0ed;
+  --accent: #f0a500;
+  /* Dourado holográfico */
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Roboto Slab', serif;
+  --radius: 12px;
+}
+
+/* Gaming: Estilo consola, escuro, contrastes neon */
+[data-world="gaming"] {
+  --bg-primary: #0b0b0e;
+  --bg-secondary: #1a1a24;
+  --text-primary: #ffffff;
+  --text-secondary: #8b92a5;
+  --accent: #0066ff;
+  /* Azul PlayStation */
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+  --radius: 4px;
+}
+
+/* Anime: Preto e branco (estilo Manga), acentos vibrantes e tipografia dramática */
+[data-world="anime"] {
+  --bg-primary: #ffffff;
+  /* Fundo de papel de manga */
+  --bg-secondary: #f0f0f0;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --accent: #ff003c;
+  /* Vermelho sangue/ação */
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Bangers', cursive;
+  --radius: 0px;
+  /* Bordas rígidas de vinhetas */
+  /* Podes adicionar um pattern de retículas (halftone) em SVG depois */
+  --bg-pattern: url('/halftone-pattern.png');
+}
+
+/* Books: Texturas clássicas, sépia, elegante */
+[data-world="books"] {
+  --bg-primary: #f4ecd8;
+  /* Papel pergaminho claro */
+  --bg-secondary: #eaddc5;
+  --text-primary: #2c1e16;
+  /* Tinta castanha escura */
+  --text-secondary: #5c4b3f;
+  --accent: #8b2615;
+  /* Vermelho encadernação clássica */
+  --font-body: 'Playfair Display', serif;
+  --font-heading: 'Playfair Display', serif;
+  --radius: 2px;
+}
+
+/* =========================================
+   4. APLICAÇÃO GLOBAL
+========================================= */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
-.hash-span {
-  margin-top: -100px;
-  padding-bottom: 100px;
-  display: block;
+body {
+  background-color: var(--bg-primary);
+  background-image: var(--bg-pattern);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  /* Uma transição suave garante que, se houver um botão de trocar o tema, 
+     as cores não mudam de forma super agressiva */
+  transition: background-color 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
 }
 
-.black-gradient {
-  background: #000000;
-  background: linear-gradient(
-    to right,
-    #434343,
-    #000000
-  );
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
 }
 
-.violet-gradient {
-  background: #804dee;
-  background: linear-gradient(90deg, #6c00ff, #8c52ff);
+button {
+  font-family: inherit;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
 }
 
-.green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+/* Exemplo genérico de botão que usa o acento do mundo */
+.btn-primary {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
 }
 
-.orange-text-gradient {
-  background: #f12711;
-  background: linear-gradient(to top, #f12711, #f5af19);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.world-switcher {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 100;
+  border: 1px solid color-mix(in srgb, var(--accent) 70%, transparent);
+  border-radius: var(--radius);
+  padding: 0.65rem 1rem;
+  background-color: color-mix(in srgb, var(--bg-secondary) 90%, transparent);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-.blue-text-gradient {
-  background: #56ccf2;
-  background: linear-gradient(to top, #2f80ed, #56ccf2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.world-switcher:hover {
+  background-color: var(--accent);
+  color: #fff;
 }
 
-.green-text-gradient {
-  background: #11998e;
-  background: linear-gradient(to top, #38ef7d, #11998e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.language-switcher {
+  position: fixed;
+  top: 1.35rem;
+  right: 11rem;
+  z-index: 100;
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
-.pink-text-gradient {
-  background: #ec008c;
-  background: linear-gradient(to top, #ec008c, #fc6767);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.language-switcher button {
+  padding: 0.2rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.language-switcher button.active,
+.language-switcher button:hover {
+  color: var(--accent);
 }

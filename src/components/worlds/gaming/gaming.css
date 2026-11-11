@@ -1,0 +1,347 @@
+/* =========================================
+   DASHBOARD GAMING (ESCURO & NEON)
+========================================= */
+.gaming-dashboard {
+	background-color: #0b0b0e;
+	color: #fff;
+	min-height: 100vh;
+	font-family: 'Inter', sans-serif;
+	overflow-x: hidden;
+	/* Brilho de fundo subtil (PlayStation Blue) */
+	background-image: radial-gradient(circle at top left, rgba(0, 102, 255, 0.15) 0%, transparent 50%);
+}
+
+/* =========================================
+   SYSTEM HEADER
+========================================= */
+.system-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 4rem;
+	background: linear-gradient(to bottom, rgba(11, 11, 14, 1), rgba(11, 11, 14, 0));
+}
+
+.system-profile {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.avatar-placeholder {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: #1a1a24;
+	border: 2px solid #0066ff;
+	box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+}
+
+.player-name {
+	display: block;
+	font-weight: 700;
+	font-size: 1.2rem;
+}
+
+.player-status {
+	font-size: 0.85rem;
+	color: #8b92a5;
+}
+
+.system-time {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #8b92a5;
+}
+
+/* =========================================
+   HORIZONTAL SCROLL (A MAGIA)
+========================================= */
+.dashboard-content {
+	padding: 0 0 4rem 0;
+	/* Padding lateral é tratado no container de scroll */
+}
+
+.player-overview {
+	display: grid;
+	grid-template-columns: minmax(240px, 0.8fr) minmax(320px, 1.2fr);
+	gap: 2rem;
+	align-items: end;
+	margin: 0 4rem 3rem;
+	padding: 2rem;
+	background: linear-gradient(135deg, #1a1a24, #12121a);
+	border: 1px solid rgba(0, 102, 255, 0.35);
+	border-left: 4px solid #0066ff;
+	border-radius: 8px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.overview-eyebrow,
+.loadout-label {
+	color: #0066ff;
+	font-family: monospace;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+}
+
+.player-overview h1 {
+	margin: 0.35rem 0;
+	font-size: 2.2rem;
+}
+
+.overview-location {
+	margin: 0;
+	color: #8b92a5;
+}
+
+.overview-focus {
+	margin: 0;
+	color: #d7d9e2;
+	line-height: 1.6;
+}
+
+.skills-section {
+	margin-bottom: 2.5rem;
+}
+
+.skills-loadout {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+	margin: 0 4rem;
+}
+
+.loadout-group {
+	padding: 1.25rem;
+	background: #1a1a24;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 8px;
+}
+
+.gaming-skill-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.gaming-skill-tag {
+	padding: 0.45rem 0.7rem;
+	border-radius: 4px;
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+.gaming-skill-tag.primary {
+	background: rgba(0, 102, 255, 0.16);
+	border: 1px solid rgba(0, 102, 255, 0.6);
+	color: #69a0ff;
+}
+
+.gaming-skill-tag.secondary {
+	background: rgba(139, 146, 165, 0.12);
+	border: 1px solid rgba(139, 146, 165, 0.4);
+	color: #c4c9d6;
+}
+
+.section-title {
+	padding: 0 4rem;
+	margin-bottom: 1.5rem;
+	font-size: 1.5rem;
+	font-weight: 300;
+	color: #e0e0e0;
+}
+
+.horizontal-scroll-container {
+	display: flex;
+	gap: 2rem;
+	padding: 0 4rem;
+	overflow-x: auto;
+
+	/* Scroll Snap: Obriga o scroll a "colar" nos elementos */
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+
+	/* Permite ver o hover effect sem cortar a sombra */
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+}
+
+/* Esconder a Scrollbar em Webkit (Chrome, Safari, Edge) */
+.horizontal-scroll-container::-webkit-scrollbar {
+	display: none;
+}
+
+/* Esconder a Scrollbar no Firefox */
+.horizontal-scroll-container {
+	scrollbar-width: none;
+}
+
+/* =========================================
+   GAME BANNER (PROJECTOS)
+========================================= */
+.game-banner {
+	flex: 0 0 700px;
+	/* Largura fixa do cartão. Não encolhe (0) não cresce (0) */
+	scroll-snap-align: start;
+	/* Onde o scroll vai encaixar */
+
+	background: #1a1a24;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.spacer-card {
+	flex: 0 0 10px;
+	/* Cartão invisível para dar margem no fim do scroll */
+}
+
+.game-banner:hover {
+	transform: translateY(-5px) scale(1.02);
+	border-color: #0066ff;
+	box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+}
+
+.game-art {
+	height: 300px;
+	background: linear-gradient(135deg, #2a2a35, #111118);
+	display: flex;
+	align-items: flex-end;
+	padding: 1rem;
+}
+
+.art-label {
+	color: #555;
+	font-family: monospace;
+}
+
+.game-info {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.game-info h3 {
+	font-size: 2rem;
+	margin: 0;
+}
+
+.game-description {
+	color: #8b92a5;
+	line-height: 1.6;
+}
+
+.game-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding-top: 1rem;
+	margin-top: auto;
+}
+
+.tech-tag {
+	background: rgba(0, 102, 255, 0.1);
+	color: #0066ff;
+	padding: 4px 10px;
+	border-radius: 4px;
+	font-size: 0.85rem;
+	font-weight: 600;
+	margin-left: 0.5rem;
+}
+
+.play-button {
+	margin-top: 1rem;
+	background: #fff;
+	color: #000;
+	border: none;
+	padding: 1rem;
+	border-radius: 8px;
+	font-weight: 700;
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition: background 0.2s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.play-button:hover {
+	background: #0066ff;
+	color: #fff;
+}
+
+/* =========================================
+   TROPHIES
+========================================= */
+.trophies-section {
+	padding: 0 4rem;
+}
+
+.trophies-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 1.5rem;
+}
+
+.trophy-card {
+	background: #1a1a24;
+	border-radius: 8px;
+	padding: 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	border-left: 4px solid #555;
+}
+
+.trophy-card.platinum {
+	border-left-color: #4df;
+}
+
+/* Azul Platina */
+.trophy-card.gold {
+	border-left-color: #ffd700;
+}
+
+/* Ouro */
+
+.trophy-icon {
+	font-size: 2.5rem;
+}
+
+.trophy-details h4 {
+	margin-bottom: 0.25rem;
+}
+
+.trophy-details p {
+	color: #8b92a5;
+	font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+	.system-header,
+	.section-title,
+	.horizontal-scroll-container,
+	.trophies-section {
+		padding-right: 1.25rem;
+		padding-left: 1.25rem;
+	}
+
+	.player-overview,
+	.skills-loadout {
+		grid-template-columns: 1fr;
+		margin-right: 1.25rem;
+		margin-left: 1.25rem;
+	}
+
+	.player-overview h1 {
+		font-size: 1.8rem;
+	}
+}

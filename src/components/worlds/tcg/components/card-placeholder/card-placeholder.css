@@ -1,0 +1,49 @@
+.tcg-card-placeholder {
+	width: 100%;
+	aspect-ratio: 2.5 / 3.5;
+	padding: 6px;
+	border-radius: 12px;
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.75);
+}
+
+.tcg-card-placeholder-legend {
+	background: linear-gradient(135deg, #f1c84b, #5d1118 40%, #180b10 72%, #d7a72b);
+}
+
+.tcg-card-placeholder-champion {
+	background: linear-gradient(135deg, #9ab5d0, #233d60 48%, #6e91b4);
+}
+
+.tcg-card-placeholder-skill {
+	background: linear-gradient(135deg, #7d6a9e, #24203c 48%, #161323);
+}
+
+.tcg-card-placeholder-inner {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.6rem;
+	border: 2px solid rgba(255, 232, 150, 0.8);
+	border-radius: 7px;
+	background:
+		linear-gradient(135deg, transparent 49%, rgba(255, 232, 150, 0.15) 50%, transparent 51%),
+		linear-gradient(45deg, transparent 49%, rgba(255, 232, 150, 0.12) 50%, transparent 51%),
+		rgba(10, 14, 22, 0.86);
+	color: #f7d96c;
+	font-family: 'Roboto Slab', serif;
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.tcg-card-placeholder-inner small {
+	color: rgba(255, 244, 202, 0.65);
+	font-family: 'Inter', sans-serif;
+	font-size: 0.5rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+}

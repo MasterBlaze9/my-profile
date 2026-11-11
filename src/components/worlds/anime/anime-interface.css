@@ -1,0 +1,250 @@
+/* =========================================
+   O MUNDO MANGA (PRETO & BRANCO)
+========================================= */
+.anime-world {
+	background-color: #f0f0f0;
+	/* Fundo do site (fora do livro) */
+	min-height: 100vh;
+	padding: 5rem 1rem 2rem 1rem;
+	font-family: 'Inter', sans-serif;
+	color: #000;
+}
+
+/* A página física do Manga */
+.manga-page {
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 1rem;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+/* =========================================
+   O PAINEL BASE (A Vinheta)
+========================================= */
+.panel {
+	border: 4px solid #000;
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+	/* Um hover muito subtil para não quebrar a ilusão de papel */
+	transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.panel:hover {
+	transform: scale(1.01);
+	box-shadow: 8px 8px 0px #000;
+	/* Sombra dura estilo pop-art/manga */
+	z-index: 10;
+}
+
+/* =========================================
+   CABEÇALHOS E INTRODUÇÃO
+========================================= */
+.manga-chapter-header {
+	padding: 1.5rem;
+	text-align: center;
+	border-width: 6px;
+	background: repeating-linear-gradient(45deg,
+			#fff,
+			#fff 10px,
+			#f0f0f0 10px,
+			#f0f0f0 20px);
+}
+
+.manga-title {
+	font-family: 'Bangers', cursive;
+	font-size: 4rem;
+	line-height: 1;
+	text-transform: uppercase;
+	margin: 0;
+	letter-spacing: 2px;
+	-webkit-text-stroke: 2px #000;
+	color: #fff;
+}
+
+.character-panel {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	min-height: 250px;
+}
+
+.character-stats {
+	padding: 1.5rem;
+	border-left: 4px solid #000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.character-stats h2 {
+	font-family: 'Bangers', cursive;
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+.power-level {
+	background: #000;
+	color: #fff;
+	padding: 0.5rem 1rem;
+	font-weight: bold;
+	display: inline-block;
+	transform: skewX(-10deg);
+	margin-bottom: 1rem;
+}
+
+.manga-data-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+}
+
+.manga-data-panel {
+	min-height: 170px;
+	padding: 1.25rem;
+}
+
+.manga-data-label {
+	display: inline-block;
+	margin-bottom: 0.75rem;
+	padding: 0.2rem 0.5rem;
+	background: #000;
+	color: #fff;
+	font-family: monospace;
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+}
+
+.manga-data-panel h3 {
+	margin-bottom: 0.75rem;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+
+.manga-data-panel p {
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+/* =========================================
+   A GRELHA ASSIMÉTRICA DE PROJETOS
+========================================= */
+.manga-projects-grid {
+	display: grid;
+	/* 4 colunas base para permitir brincar com os tamanhos */
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 250px;
+	gap: 1rem;
+}
+
+.manga-project-panel {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Tamanhos dinâmicos com CSS Grid */
+.panel-large {
+	grid-column: span 3;
+	grid-row: span 1;
+}
+
+.panel-tall {
+	grid-column: span 1;
+	grid-row: span 2;
+}
+
+.panel-standard {
+	grid-column: span 2;
+	grid-row: span 1;
+}
+
+/* =========================================
+   DETALHES DO MANGA (Onomatopeias e Texto)
+========================================= */
+.panel-inner {
+	padding: 1.5rem;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.sfx-text {
+	position: absolute;
+	top: 10px;
+	right: -10px;
+	font-family: 'Bangers', cursive;
+	font-size: 3rem;
+	color: transparent;
+	-webkit-text-stroke: 2px #000;
+	transform: rotate(-15deg);
+	pointer-events: none;
+	opacity: 0.2;
+}
+
+.manga-project-panel h3 {
+	font-size: 1.8rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	border-bottom: 4px solid #000;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.panel-content {
+	flex: 1;
+	font-size: 1rem;
+	line-height: 1.4;
+	font-weight: 600;
+}
+
+.panel-tech {
+	margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.manga-tag {
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 0.9rem;
+	background: #000;
+	color: #fff;
+	padding: 2px 6px;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Mobile = Uma coluna)
+========================================= */
+@media (max-width: 900px) {
+	.character-panel {
+		grid-template-columns: 1fr;
+	}
+
+	.character-stats {
+		border-left: none;
+		border-top: 4px solid #000;
+	}
+
+	.manga-data-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.manga-projects-grid {
+		grid-template-columns: 1fr;
+		grid-auto-rows: auto;
+	}
+
+	.panel-large,
+	.panel-tall,
+	.panel-standard {
+		grid-column: span 1;
+		grid-row: auto;
+		min-height: 250px;
+	}
+}

@@ -1,0 +1,133 @@
+/* =========================================
+   LANDING SCREEN (O Ecrã de Entrada)
+========================================= */
+.landing-screen {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	background-color: var(--bg-primary);
+	/* Um gradiente radial muito subtil para dar profundidade ao fundo escuro */
+	background-image: radial-gradient(circle at 50% 0%, var(--bg-secondary) 0%, transparent 70%);
+}
+
+/* =========================================
+   WORLD SELECTOR (Container e Cabeçalho)
+========================================= */
+.world-selector-container {
+	max-width: 900px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	animation: fadeIn 0.8s ease-out forwards;
+}
+
+.world-selector-header {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.world-selector-header h2 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+}
+
+.world-selector-header p {
+	color: var(--text-secondary);
+	font-size: 1.1rem;
+}
+
+/* =========================================
+   A GRELHA DE OPÇÕES
+========================================= */
+.options-grid {
+	display: grid;
+	/* Grelha responsiva: 2 colunas em desktop, 1 em mobile (abaixo de ~550px) */
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+}
+
+/* =========================================
+   OS BOTÕES / CARDS DE CADA MUNDO
+========================================= */
+.world-selector-option {
+	background-color: var(--bg-secondary);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	border-radius: var(--radius);
+	padding: 2rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 1rem;
+	cursor: pointer;
+	color: var(--text-primary);
+
+	/* Efeitos de transição fluidos */
+	transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* O estado Hover é fundamental para convidar ao clique */
+.world-selector-option:hover {
+	transform: translateY(-5px);
+	border-color: var(--accent);
+	box-shadow: 0 10px 30px -10px rgba(0, 112, 243, 0.3);
+	/* Usa o azul do accent */
+}
+
+/* Quando o botão é clicado (feedback visual instantâneo) */
+.world-selector-option:active {
+	transform: translateY(0);
+}
+
+.world-selector-icon {
+	color: var(--accent);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 112, 243, 0.1);
+	padding: 1rem;
+	border-radius: 50%;
+	margin-bottom: 0.5rem;
+	transition: transform 0.3s ease;
+}
+
+.world-selector-option:hover .world-selector-icon {
+	transform: scale(1.1);
+}
+
+.world-selector-content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.world-selector-title {
+	font-weight: 600;
+	font-size: 1.25rem;
+	font-family: var(--font-heading);
+}
+
+.world-selector-desc {
+	font-size: 0.9rem;
+	color: var(--text-secondary);
+	line-height: 1.4;
+}
+
+/* Animação de entrada suave da página inteira */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
